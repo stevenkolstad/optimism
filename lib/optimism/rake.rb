@@ -2,7 +2,7 @@ require "fileutils"
 
 desc "Inject some optimism into this application"
 task :"optimism:install" do
-  app_path_part = (Webpacker && Rails) ? Webpacker.config.source_path.relative_path_from(Rails.root) : "app/javascript"
+  app_path_part = "app/javascript"
 
   CHANNELS = [
     {app_path: "#{app_path_part}/channels/optimism_channel.js", template_path: "../templates/optimism_channel.js" },
